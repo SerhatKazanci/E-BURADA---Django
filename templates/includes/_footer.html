@@ -1,0 +1,93 @@
+{% load static%}
+
+<!-- FOOTER -->
+<footer class="bg-warning bg-opacity-10 text-dark">
+  <div class="container-fluid altmenu ">
+  
+   <div class="row mx-5 mb-5">
+   
+       
+   
+   <div class="col-lg-2 col-6 mt-3">
+    <h3 class="text-light">E-BURADA</h3>
+    <p>E-BURADA olarak hem yurtiçi hem de yurtdışı olarak uzun yıllardır Türkiye de hizmet vermekteyiz.Amacımız yurtdışında da aktif hale gelerek depolarımızı oralara taşımaktır.</p>
+   </div>
+
+   {% for gez in footer  %}
+   <div class="col-lg-2 col-6 mt-3">
+     <a href="kadin.html"><img  class="footer-foto" src="{{gez.footerfoto.url}}" alt="" ></a>
+     <p class="mt-2 text-light">{{gez.footerbaslik}}</p>
+   </div>
+  
+   {% endfor %}
+   <div class="col-lg-2 col-6 mt-3">
+    
+     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3123.41217566912!2d27.08938501533799!3d38.47813007963743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bbd9e3318c3c8f%3A0xdce0474ce57ebf4a!2sTrendyol%20Express!5e0!3m2!1str!2str!4v1657007101225!5m2!1str!2str" width="150" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+   </div>
+   </div>
+   
+   
+   
+   <!-- row alt kısım -->
+     <div class="row mt-3 mx-5">
+       
+       <div class="col-lg-2 col-6">
+         <h5 class="text-light">Kampanyalar</h5>
+           <ul class="navbar-nav">
+               <li class="nav-item mb-2"><a href="#" class="nav-link">Yardım Merkezi</a></li>
+               <li class="nav-item mb-2"><a href="#" class="nav-link">İş imkanları</a></li>
+               <li class="nav-item mb-2"><a href="#" class="nav-link">Gizlilik</a></li>
+               <li class="nav-item mb-2"><a href="#" class="nav-link">Hız Testi</a></li>
+           </ul>
+       </div>
+   
+       <div class="col-lg-2 col-6">
+         <h5 class="text-light" >Mobil Uygulamalar</h5>
+         <ul class="navbar-nav">
+           <li class="nav-item mb-2"><a href="#" class="nav-link"> <img src="{% static  'img/Footer/app-store-2.svg'  %}" alt="" width="100"> </a></li>
+           <li class="nav-item mb-2"><a href="#" class="nav-link"><img src="{% static  'img/Footer/google-play@3x.png'  %}" alt="" width="100"></a></li>
+           <li class="nav-item mb-2"><a href="#" class="nav-link"><img src="{% static  'img/Footer/huawei-app-gallery@3x.png'  %}" alt="" width="100"></a></li>
+       
+       </ul>
+       </div>
+   
+       <div class="col-lg-2 col-6">
+         <h5 class="text-light">Sosyal Medya</h5>
+           <ul class="navbar-nav mx-3  text-black">
+               <li class="nav-item mb-2"><a href="#" class="nav-link"><i class="fa-brands fa-facebook fs-4 "></i></a></li>
+               <li class="nav-item mb-2"><a href="#" class="nav-link"><i class="fa-brands fa-instagram fs-4 " ></i></a></li>
+               <li class="nav-item mb-2"><a href="#" class="nav-link"><i class="fa-brands fa-twitter fs-4 "></i></a></li>
+             
+           </ul>
+       </div>
+     
+       <div class="col-lg-2 col-6">
+        <h5 class="text-light">İletişim </h5>
+        <b>Adres:</b> <br>
+        <p>Modacılar Mahallesi </p>
+        <p>Kazancı Plaza No:8</p>
+        <p>İzmir/Konak</p>
+        <b>Müşteri Hizmetleri:</b>
+        <p>Tel:0850 254 57 48</p>
+        
+      </div>
+   
+       <div class="col-lg-4 col-6">
+        <h5 class="text-light">E-Bülten</h5>
+        <p>Kampanyalardan haberdar olmak için iletişimde kalın. </p>
+   
+        <div class="input-group">
+         <input type="email" class="form-control" placeholder="ahmetarki12@gmail.com" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+         <button class="btn btn-light btn-outline-warning" type="button" id="inputGroupFileAddon04"><i class="fa-solid fa-forward"></i></button>
+       </div>
+       <br>
+       <p><input type="checkbox"><a href="https://www.ayakkabidunyasi.com.tr/t/gizlilik-politikasi" target="_blank">Gizlilik Sözleşmesini</a> okudum ve kabul ediyorum.</p>
+     </div>
+   </div>
+   
+  
+   </div>
+ </footer>
+ 
+ 
+ 

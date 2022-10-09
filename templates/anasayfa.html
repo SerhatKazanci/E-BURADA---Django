@@ -1,0 +1,355 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-BURADA</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"/>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/04e4fce483.js" crossorigin="anonymous"></script>
+    <!-- AOS Kütüphanesi -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+
+
+    {% block content %}
+
+    <style>
+      .btn {
+        animation: 3s infinite alternate buton;
+      }
+      @keyframes buton {
+        0% {
+          color: blue;
+        }
+        50% {
+          color: yellow;
+        }
+        100% {
+          color: pink;
+        }
+      }
+
+      /* Responsive */
+      @media screen and (max-width: 1100px) {
+        .card {
+          width: 12em !important;
+          margin-bottom: 200px;
+        }
+        .card-body {
+          height: 250px !important;
+        }
+        .card-text {
+          font-size: 15px;
+        }
+
+        .altmenu .col-6 {
+          width: 33.3%;
+        }
+        .altmenu iframe {
+          height: 150px;
+        }
+
+        .altmenu {
+          margin-left: 7%;
+        }
+      }
+
+      @media screen and (max-width: 900px) {
+        .lis {
+          width: 80%;
+          margin: auto;
+        }
+        .card {
+          width: 10em !important;
+          margin-bottom: 150px;
+          margin-left: 90px;
+        }
+        .card-body {
+          height: 300px !important;
+        }
+        .card-text {
+          font-size: 13px;
+        }
+        /* düzelt */
+        .altmenu {
+          margin-left: 5%;
+        }
+        .giris-sag {
+          text-align: center;
+        }
+
+        /* eklendi */
+        .input-group {
+          width: 250px;
+        }
+      }
+
+      @media screen and (max-width: 700px) {
+        .containers {
+          width: 95%;
+        }
+        .card {
+          width: 8em !important;
+          margin-bottom: 125px;
+          margin-left: 50%;
+        }
+        .card-body {
+          height: 250px !important;
+        }
+        .card-title {
+          font-size: 14px;
+        }
+
+        .card-img-top {
+          height: 250px !important;
+        }
+        /* düzelt */
+        .altmenu {
+          margin: auto;
+        }
+        .navbas {
+          height: 100px;
+        }
+        .navbas .active {
+          font-size: 10px;
+        }
+        .arama {
+          width: 200px;
+        }
+        .giris-sag {
+          width: 75px;
+          font-size: 15px;
+          text-align: center;
+        }
+        .lis {
+          width: 90%;
+        }
+        /* eklendi */
+        .input-group {
+          width: 250px;
+        }
+      }
+      /* eklendii */
+      @media screen and (max-width: 500px) {
+        .altmenu .col-6 {
+          width: 50%;
+        }
+        .input-group {
+          width: 250px;
+        }
+      }
+    </style>
+  
+    {% include "includes/_navbar.html" %}
+
+    <!-- LİSTELER VE CARD -->
+
+    <div class="containers liste m-auto">
+      <div class="row mt-2">
+        <div class="col-3 lh-lg fs-3 fst-italic lis">
+          <h3 class="mb-2 text-center text-black fs-1">KATEGORİ</h3>
+
+          <ul class="list-group list">
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center bg-primary bg-opacity-25">
+              <a href="{% url 'kadin' %}" class="text-decoration-none text-black">KADIN</a>
+              <button class="badge text-black">+</button>
+            </li>
+
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center bg-primary bg-opacity-25">
+              <a href="{% url 'erkek' %}" class="text-decoration-none text-black">ERKEK</a>
+              <button class="badge text-black">+</button>
+            </li>
+
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center bg-primary bg-opacity-25">
+              <a href="{% url 'cocuk' %}" class="text-decoration-none text-black">ÇOÇUK</a>
+              <button class="badge text-black">+</button>
+            </li>
+
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center bg-primary bg-opacity-25">
+              <a href="#" class="text-decoration-none text-black">BAHAR GRUBU</a>
+              <button class="badge text-black">+</button>
+            </li>
+
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center bg-primary bg-opacity-25">
+              <a href="#" class="text-decoration-none text-black"> YAZ GRUBU</a>
+              <button class="badge text-black">+</button>
+            </li>
+
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center bg-primary bg-opacity-25">
+              <a href="#" class="text-decoration-none text-black"> KIŞ GRUBU</a>
+              <button class="badge text-black">+</button>
+            </li>
+
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center bg-primary bg-opacity-25">
+              <a href="#" class="text-decoration-none text-black">SONBAHAR GRUBU</a>
+              <button class="badge text-black">+</button>
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- cards -->
+        <div class="col-9 mb-5">
+          <div class="row">
+            {% for kar in card %}
+            <div class="col-4 mt-5" data-aos="flip-left" data-aos-duration="1000" >
+
+              <div class="card" style="width: 16em">
+                <img src="{{kar.resim.url}}" height="425"   class="card-img-top"   alt="..."/>
+                <div class="card-body bg-danger bg-opacity-25">
+
+                  <h5 class="card-title">{{kar.title}}</h5>
+                  <p class="card-text">{{kar.text}}</p>
+                  <a   href="kadin.html"  class="btn btn-outline-danger"  target="_blank"  >Alışverişe Başla</a >
+
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- content kısmı -->
+
+    <div class="containers icerik m-auto mt-5 mb-5">
+      <div  id="carouselExampleControls"  class="carousel slide"  data-bs-ride="carousel" >
+        <div class="carousel-inner">
+      {% for gez in content %}
+           <div class="carousel-item active">
+            <img src="{{gez.resim.url}}" class="d-block w-100" alt="..."/>
+          </div>
+          {% endfor %}
+         
+        </div>
+
+        <button   class="carousel-control-prev"   type="button"   data-bs-target="#carouselExampleControls"    data-bs-slide="prev" >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+
+        <button  class="carousel-control-next"  type="button"  data-bs-target="#carouselExampleControls"  data-bs-slide="next" >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+        
+      </div>
+    </div>
+
+    <!-- Accordion Kısmı -->
+
+    <div class="containers icerik m-auto accor mb-5">
+      <div class="row w-100">
+        <div class="col-sm-9 col-12 m-auto mt-5">
+          <button class="accordion">Biz Kimiz?</button>
+          <div class="panel text-black bg-info bg-opacity-25">
+            <p>
+              Müşterilerimize ve satıcılarımıza kusursuz bir e-ticaret deneyimi
+              yaşatmak için 2010’da kurulduk. Bugün, Türkiye'nin lider e-ticaret
+              şirketi ve dünyanın önde gelen platformlarından biri olmanın yanı
+              sıra ülkemizin ilk decacorn’uyuz! Esnaf ve KOBİ'lerimizi
+              dijitalleştirerek, onları daha çok müşteriye ulaştırıyoruz ve
+              işlerini büyütüyoruz. Kadınların dijital ekonomiye katılımını,
+              yerli üretimi ve üreticileri destekliyoruz. Böylece ülke
+              ekonomisinin büyümesine ve istihdamın artmasına önemli katkı
+              sağlıyoruz. Türkiye’nin Trendyol’u olarak ülkemizin lider Ar-Ge
+              merkezlerinden E-burada Tech, en hızlı gelişen taşıma ağı E-burada
+              Express, Market ve Yemek hızlı teslimat hizmeti veren E-burada Go
+              ve en büyük ikinci el ürün platformu Dolap ile değer üretmeye ve
+              hızla büyümeye devam ediyoruz.
+            </p>
+          </div>
+
+          <button class="accordion mt-2">Kariyer Şartları Nelerdir?</button>
+          <div class="panel text-black bg-info bg-opacity-25">
+            <p>
+              Biz ortak bir amacı paylaşan, kültür ve değerleri ile yaşayan bir
+              ekibiz! Heyecan verici yolculuğumuzda bize yol arkadaşı olacak,
+              kültür ve değerlerimizle uyumlu adayları E-burada ya kazandırmak
+              en büyük tutkumuz.
+            </p>
+          </div>
+
+          <button class="accordion mt-2">
+            E-Burada da Satış Yapabilir Miyim ?
+          </button>
+          <div class="panel text-black bg-info bg-opacity-25">
+            <p>Geçici bir süre kullanım dışıdır.</p>
+          </div>
+
+          <button class="accordion mt-2">
+            İptal ve İade Şartlar Nelerdir?
+          </button>
+          <div class="panel text-black bg-info bg-opacity-25">
+            <p>
+              E-Burada esnektir. Sinir bozucu hiçbir sözleşme ve taahhüt yoktur.
+              Hesabınızı çevrimiçi olarak iki tıklamayla kolayca iptal
+              edebilirsiniz. İptal ücreti yoktur - hesabınızı istediğiniz zaman
+              başlatın veya durdurun.
+            </p>
+          </div>
+
+          <button class="accordion mt-2">Sıkça Sorulan Sorular ?</button>
+          <div class="panel text-black bg-info bg-opacity-25">
+            <p>
+              + Siparişim kaç günde elime ulaşır?<br />
+              + Siparişim hangi kargo firması ile gönderiliyor?<br />
+              + İptal ettiğim siparişin geri ödemesi nasıl yapılır?<br />
+              + İncelemeye verilen ürün ne zaman sonuçlanır?<br />
+              + İnternetten aldığım ürünümün değişimi için ne yapmalıyım?<br />
+              + Üye olmak ücretli midir? Üye olmadan alışveriş yapabilir miyi<br />
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+
+          var panel = this.nextElementSibling;
+          if (panel.style.display === "block") {
+            panel.style.display = "none";
+          } else {
+            panel.style.display = "block";
+          }
+        });
+      }
+    </script>
+
+    
+    
+    {% include "includes/_footer.html" %}
+    
+    {% endblock content %} 
+    <script>
+      AOS.init();
+    </script>
+  

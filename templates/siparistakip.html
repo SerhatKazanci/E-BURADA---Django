@@ -1,0 +1,155 @@
+{% extends "anasayfa.html" %}
+{% load static%}
+
+
+{% block content %}
+<style>
+   @media screen and (max-width:1100px) {
+     .altmenu .col-6{
+      width: 33.3%;
+     }
+     .altmenu iframe{
+      height: 150px;
+     }
+
+     .altmenu{
+      margin-left: 7%;
+     }
+   }
+   
+   @media screen and (max-width:900px) {
+.siparis{
+  width: 60%;
+}
+.giris-sag{
+text-align: center;
+   }  
+   .altmenu{
+      margin-left: 5%;
+     }
+   .input-group{ 
+      width: 250px;
+    }
+
+ }
+
+ @media screen and (max-width:700px) {
+.siparis{
+  width: 70%;
+}
+.altmenu{
+      margin:auto;
+     }
+    .navbas{
+     height: 100px;
+    }
+    .navbas .active{
+     font-size: 10px;
+    }
+  .arama{
+   width: 200px;
+  }
+  .giris-sag{
+   width: 75px;
+   font-size: 15px;
+   text-align: center;
+  } 
+  .input-group{
+      width: 250px;
+    } 
+
+ }
+ @media screen and (max-width : 500px){
+  .altmenu .col-6{
+      width: 50%;
+     }
+    .input-group{
+      width: 250px;
+    }
+     
+ }
+</style>
+    
+      
+
+
+
+
+{% include "includes/_navbar.html" %}
+
+<!-- Sipariş Takip -->
+
+<div class="containers siparis ">
+  <div id="siparis">
+    <h3 class="mt-5"> <b>Sipariş Sorgulama</b> </h3>
+    <br>
+    
+    <form action="" method="POST">
+                  
+      {% csrf_token %}
+
+      {{ form }}
+      <br>
+
+      <div id = "success"></div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary" id="sendMessageButton">Gönder</button>
+      </div>
+    </form>
+  </div>       
+</div>
+
+
+
+
+
+
+<!-- JAVASCRIPT ÇALIŞMA FRONTEND-->
+
+
+
+<!-- <script src=" {% static 'js/jquery.js' %}"></script>
+<script>
+
+ document.getElementById("#bas").onclick = function(){
+let telefon = document.getElementById("#tele").value ;
+let parola = document.getElementById("#sip").value ;
+if (telefon == ""){
+  alert("telefon giriniz")
+}
+else if(parola == ""){
+  alert(" parola giriniz")
+}
+}
+
+$("#Gönder").click(function() {
+      if($("#isim").val() == "") {
+                    $("#isim").attr("placeholder", "isim boş bırakılamaz") ;
+                }
+            
+                if($("#email").val() == "") {
+                    $("#email").attr("placeholder", "Email boş bırakılamaz") ;
+                }
+    
+                if ($("#konu").val() == ""){
+                    $("#konu").attr("placeholder", "konu boş bırakılamaz");
+                }
+    
+                if ($("#mesaj").val() == ""){
+                    $("#mesaj").attr("placeholder", "mesaj boş bırakılamaz")
+                }
+    
+         })
+
+</script> -->
+
+
+
+
+
+
+
+
+{% include "includes/_footer.html" %}
+{% endblock content %}
+

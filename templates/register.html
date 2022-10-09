@@ -1,0 +1,206 @@
+{% extends "anasayfa.html" %}
+{% load static%}
+
+
+
+ {% block content %}
+<style>
+      
+
+@keyframes buton {
+  0%{
+    color:blue ;
+      
+  }
+  50%{
+     color: yellow;
+      
+  }
+  100%{
+    color:pink ;
+  }
+
+}
+
+
+/* Responsive */
+@media screen and (max-width:1100px) {
+     .card{
+       width: 12em!important;
+       margin-bottom: 200px;
+     }
+     .card-body{
+     height: 250px!important;
+     }
+     .card-text{
+      font-size: 15px;
+     }
+
+     .altmenu .col-6{
+      width: 33.3%;
+     }
+     .altmenu iframe{
+      height: 150px;
+     }
+
+     .altmenu{
+      margin-left: 7%;
+     }
+            
+}
+
+
+   @media screen and (max-width:900px) {
+    .lis{  
+         width: 80%;
+         margin: auto;
+     }
+     .card{
+      width: 10em!important;
+      margin-bottom: 150px;
+      margin-left: 90px;
+     }
+     .card-body{
+      height: 300px!important;
+     }
+     .card-text{
+      font-size: 13px;
+     }
+     /* düzelt */
+     .altmenu{
+      margin-left: 5%;
+     }
+     .giris-sag{
+    text-align: center;
+   }  
+
+   /* eklendi */
+   .input-group{ 
+      width: 250px;
+    }
+  
+ }
+
+ @media screen and (max-width:700px) {
+     .containers{
+      width: 95%;
+     }
+     .card{
+      width: 8em!important;
+      margin-bottom: 125px;
+      margin-left: 50%;
+     }
+     .card-body{
+      height: 250px!important;
+     }
+     .card-title{
+      font-size: 14px;
+     }
+    
+     .card-img-top{
+      height: 250px!important;
+     }
+     /* düzelt */
+     .altmenu{
+      margin:auto;
+     }
+     .navbas{
+      height: 100px;
+     }
+     .navbas .active{
+      font-size: 10px;
+     }
+     .arama{
+    width: 200px;
+   }
+   .giris-sag{
+    width: 75px;
+    font-size: 15px;
+    text-align: center;
+   }
+   .lis{
+    width: 90%;
+   }
+   /* eklendi */
+   .input-group{
+      width: 250px;
+    }
+     
+   
+ }
+ /* eklendii */
+ @media screen and (max-width : 500px){
+  .altmenu .col-6{
+      width: 50%;
+     }
+    .input-group{
+      width: 250px;
+    }
+     
+ }
+
+
+
+     </style>
+
+  {% include "includes/_navbar.html" %}
+  
+
+ 
+
+<!-- kayıt ol -->
+
+<div class="containers mt-5  giris m-auto">
+  <div class="col">
+      <h1>Kayıt Ol</h1>
+      <hr>
+
+      <form action="" method="POST">
+        {% csrf_token %}
+          <div class="mb-3">
+              <label for="username" class="form-label">Kullanıcı Adı</label>
+              <input type="text" class="form-control" name="username">
+          </div>
+          <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" name="email">
+          </div>
+          <div class="row">
+              <div class="col">
+                  <label for="firstname" class="form-label">İsim</label>
+                  <input type="text" class="form-control" name="firstname">
+              </div>
+            
+              <div class="col">
+                  <label for="lastname" class="form-label">Soyisim</label>
+                  <input type="text" class="form-control" name="lastname">
+              </div>
+          </div>
+
+          <div class="row mb-3">
+              <div class="col">
+                  <label for="password" class="form-label">Şifre</label>
+                  <input type="password" class="form-control" name="password">
+              </div>
+            
+              <div class="col">
+                  <label for="repassword" class="form-label">Şifre Tekrar</label>
+                  <input type="password" class="form-control" name="repassword">
+              </div>
+          </div>
+        
+          <div>
+              <input type="submit" value="Kayıt Ol" class="btn btn-primary mb-5">
+          </div>
+          
+      </form>
+  </div>
+
+</div>
+
+
+
+
+
+{% include "includes/_footer.html" %}
+{% endblock content %} 

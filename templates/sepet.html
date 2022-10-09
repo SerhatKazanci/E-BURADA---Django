@@ -1,0 +1,138 @@
+{% extends "anasayfa.html" %}
+{% load static%}
+
+{% block content %}
+      <style>
+@media screen and (max-width:1000px) {
+
+.giris-sag{
+text-align: center;
+   }  
+
+.sepet{
+  width: 90%;
+}
+
+ .altmenu .col-6{
+      width: 33.3%;
+     }
+     .altmenu iframe{
+      height: 150px;
+     }
+     /* düzelt */
+     .altmenu{
+      margin-left: 7%;
+     }
+    }
+
+
+@media screen and (max-width:900px) {
+
+.giris-sag{
+text-align: center;
+   }  
+.fw-bold{
+  font-size: 15px!important;
+}
+ 
+ .tablo img{
+width: 200px;
+height: 200px;
+  }
+  .altmenu{
+      margin-left: 5%;
+     } 
+     .input-group{ 
+      width: 250px;
+    }
+    }
+
+ @media screen and (max-width:700px) {
+   #magaza{
+     width: 95%;
+    }
+  
+    .navbas{
+     height: 100px;
+    }
+    .navbas .active{
+     font-size: 10px;
+    }
+  .arama{
+   width: 200px;
+  }
+  .giris-sag{
+   width: 75px;
+   font-size: 15px;
+   text-align: center;
+  }  
+  .fw-bold{
+  font-size: 10px!important;
+}
+ 
+ .tablo img{
+width: 125px;
+height: 125px;
+  }
+.sepet{
+  width: 100%;
+}
+.altmenu{
+      margin-left: auto;
+     }
+     .input-group{
+      width: 250px;
+    }
+
+ }
+ @media screen and (max-width : 500px){
+  .altmenu .col-6{
+      width: 50%;
+     }
+    .input-group{
+      width: 250px;
+    }
+     
+ }
+
+      </style>
+
+
+  {% include "includes/_navbar.html" %}
+
+
+<!-- sepet -->
+<div class="containers sepet m-auto bg-success bg-opacity-50">
+      <table class="table tablo">
+        {% for gez in sepet %}
+        <thead class="table-info">
+          <tr>
+        
+            <th scope="col">ÜRÜN</th>
+            <th scope="col">AÇIKLAMA</th>
+            <th scope="col">FİYAT</th>
+            <th scope="col">ADET</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+       
+        <tbody>
+          <tr> 
+            
+            <th><a href="#"><img src="{{gez.foto.url}}" alt="" width="250" height="250"></a></th>
+            <td class="fs-5 fw-bold">{{gez.aciklama}}</td>
+            <td class="fs-5 fw-bold">{{gez.fiyat}}</td>
+            <td> <a href="#" class="fs-6 text-decoration-none text-dark"> - </a>   <span class="fs-6 text-light">{{gez.adet}}</span> <a href="#" class="fs-6 text-decoration-none text-dark"> + </a></td>
+            <td><button type="button" class="btn-close" aria-label="Close"></button></td> 
+          </tr>
+       
+      </tbody>
+      {% endfor %}
+    </table>
+ 
+</div>
+
+
+{% include "includes/_footer.html" %}
+{% endblock content %}
+

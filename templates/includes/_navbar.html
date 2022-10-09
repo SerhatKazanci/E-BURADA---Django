@@ -1,0 +1,257 @@
+  {% load static%}
+  
+  <!-- üst menü -->
+
+  <nav class="navbar navbas navbar-expand-lg bg-warning bg-opacity-50 ">
+    <div class="container-fluid">
+
+      <div class="collapse navbar-collapse d-flex justify-content-between mx-5 " id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-square-phone"></i>     0850 254 5748</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-at"></i>   info@e-burada.com</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active firsat" aria-current="page" href="{% url 'login' %}">150 TL'ye Varan İndirim Fırsatını Kaçırma!</a>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav">
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'magazalar' %}" target="_blank"><i class="fa-solid fa-store"></i>   Mağazalar</a>
+          
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'takip' %}"  target="_blank"><i class="fa-solid fa-circle-question"></i>    Sipariş Takip</a>
+          </li>
+        
+        </ul> 
+      </div>
+    </div>
+  </nav>
+
+
+<!-- ana menü -->
+
+  <nav class="navbar navalt navbar-expand-lg bg-primary bg-opacity-25 ">
+    <div class="container-fluid  ">
+      <div class="collapse navbar-collapse d-flex justify-content-between mx-5 " id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'anasayfa' %}" target="_blank"><img src="{%  static  'img/amblem.jpg'  %}" alt="" width="70px" >   E-BURADA</a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <form class="d-flex " role="search" method="GET" >
+              <input class="form-control arama" name="search" type="search" placeholder="ARA" aria-label="Search">
+              <button class="btn mx-1 btn-outline-warning" type="submit">ARA</button>
+            </form>
+          </li>
+        </ul>
+        <ul class="navbar-nav giris-sag ">
+          {% if user.is_authenticated %}
+         
+        
+            <li class="nav-item">
+              <a class="nav-link active bg-warning bg-opacity-50" aria-current="page" href="{% url 'sepet' %}" target="_blank">Sepet</a>
+              </li>
+            <li class="nav-item mx-2">
+                <a class="nav-link active bg-warning bg-opacity-50" aria-current="page" href="{% url 'ulasin' %}" target="_blank">Ulaşın</a>
+            </li>
+              <li class="nav-item mx-2">
+            <a class="nav-link active bg-warning bg-opacity-50 text-uppercase" aria-current="page" href="#" target="_blank">{{request.user}} </a>
+            </li>
+            <li class="nav-item  ">
+              <a class="nav-link active bg-warning bg-opacity-50 " type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" aria-current="page" href="#" target="_blank">Çıkış</a>
+            </li>
+            <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Hesaptan Çıkış Yap</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      Çıkış Yapmak İstediğinizden Emin Misiniz?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><a href="{% url 'logout' %}" class="text-decoration-none">Çıkış Yap</a> </button>
+                      <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><a href="" class="text-decoration-none">Vazgeç</a> </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+          {% else %}
+          <li class="nav-item  ">
+            <a class="nav-link active bg-warning bg-opacity-50 " aria-current="page" href="{% url 'login' %}" target="_blank">Giriş</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link active bg-warning bg-opacity-50" aria-current="page" href="{% url 'register' %}" target="_blank">Kayıt Ol</a>
+            </li>
+        
+          
+          {% endif %}
+          
+        </ul>
+
+        
+      </div>
+    </div>
+  </nav>
+
+
+  
+
+
+
+<!-- acılır menü -->
+
+
+<div class="acilir overflow-hidden d-flex justify-content-around bg-primary containers m-auto bg-opacity-25 mt-5"> <!-- navbar -->
+ 
+  <div class="bas"><!--  dropdown -->
+
+    <button class="basbtn">  KADIN 
+      <i class="fa fa-caret-down"></i>
+    </button>
+
+    <div class="bas-ic">
+
+      <div class="sira">
+        <div class="sutun">
+          <h3>GİYİM</h3>
+          <hr>
+          <a href="{% url 'kadin' %}" target="_blank">* Elbise</a>
+          <a href="{% url 'kadin' %}" target="_blank">* Tişört</a>
+          <a href="{% url 'kadin' %}" target="_blank">* Pantolon</a>
+        </div>
+        <div class="sutun">
+          <h3>AYAKKABI</h3>
+          <hr>
+          <a href="{% url 'kadin' %}" target="_blank">* Spor Ayakkabı</a>
+          <a href="{% url 'kadin' %}" target="_blank">* Topuklu Ayakkabı</a>
+          <a href="{% url 'kadin' %}" target="_blank">* Terlik</a>
+        </div>
+        <div class="sutun">
+          <h3>KOZMETİK</h3>
+          <hr>
+          <a href="{% url 'kadin' %}" target="_blank">* Makyaj Malzemeleri</a>
+          <a href="{% url 'kadin' %}" target="_blank">* Parfüm Çeşitleri</a>
+          <a href="{% url 'kadin' %}" target="_blank">* Duş Malzemeleri</a>
+        </div>
+      </div>
+    </div>
+  </div> 
+  
+  <div class="bas"><!--  dropdown -->
+
+    <button class="basbtn">ERKEK
+      <i class="fa fa-caret-down"></i>
+    </button>
+
+    <div class="bas-ic">
+      
+      <div class="sira">
+        <div class="sutun">
+          <h3>GİYİM</h3>
+          <hr>
+          <a href="{% url 'erkek' %}" target="_blank">* Tişört</a>
+          <a href="{% url 'erkek' %}" target="_blank">* Gömlek</a>
+          <a href="{% url 'erkek' %}" target="_blank">* Pantolon</a>
+        </div>
+        <div class="sutun">
+          <h3>AYAKKABI</h3>
+          <hr>
+          <a href="{% url 'erkek' %}" target="_blank">* Spor Ayakkabı</a>
+          <a href="{% url 'erkek' %}" target="_blank">* Klasik Ayakkabı</a>
+          <a href="{% url 'erkek' %}" target="_blank">* Krampon</a>
+        </div>
+        <div class="sutun">
+          <h3>AKSESUAR</h3>
+          <hr>
+          <a href="{% url 'erkek' %}" target="_blank">* Saat</a>
+          <a href="{% url 'erkek' %}" target="_blank">* Bileklik</a>
+          <a href="{% url 'erkek' %}" target="_blank">* Kemer</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="bas"><!--  dropdown -->
+
+    <button class="basbtn">ÇOÇUK
+      <i class="fa fa-caret-down"></i>
+    </button>
+
+    <div class="bas-ic">
+      
+      <div class="sira">
+        <div class="sutun">
+          <h3>BEBEK</h3>
+          <hr>
+          <a href="{% url 'cocuk' %}" target="_blank">* Bebek Takımları</a>
+          <a href="{% url 'cocuk' %}" target="_blank">* Yenidoğan Kıyafetleri</a>
+          <a href="{% url 'cocuk' %}" target="_blank">* Ayakkabı</a>
+        </div>
+        <div class="sutun">
+          <h3>KIZ ÇOCUK</h3>
+          <hr>
+          <a href="{% url 'cocuk' %}" target="_blank">* Elbise</a>
+          <a href="{% url 'cocuk' %}" target="_blank">* Ayakkabı</a>
+          <a href="{% url 'cocuk' %}" target="_blank">* Şort</a>
+        </div>
+        <div class="sutun">
+          <h3>ERKEK ÇOCUK</h3>{% url 'cocuk' %}
+          <a href="{% url 'cocuk' %}" target="_blank">* Tişört</a>
+          <a href="{% url 'cocuk' %}" target="_blank">* Ayakkabı</a>
+          <a href="{% url 'cocuk' %}" target="_blank">* Şort</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bas"><!--  dropdown -->
+
+    <button class="basbtn">MARKALAR
+      <i class="fa fa-caret-down"></i>
+    </button>
+
+    <div class="bas-ic">
+      
+      <div class="sira">
+        <div class="sutun">
+          <a href="#">* Adidas</a>
+          <a href="#">* Hummel</a>
+          <a href="#">* Nike</a>
+          <a href="#">* Mavi</a>
+        </div>
+        <div class="sutun">
+          <a href="#">* Koton</a>
+          <a href="#">* Puma</a>
+          <a href="#">* Lacoste</a>
+          <a href="#">* Pull&Bear</a>
+        </div>
+        <div class="sutun">
+          <a href="#">* Zara</a>
+          <a href="#">* Pierre Cardin</a>
+          <a href="#">* Civil Boys</a>
+          <a href="#">* Poleris</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+
+{% if messages %}
+{% for mesaj in messages %}
+    <div class="alert alert-{{mesaj.tags}}  text-center" role="alert">
+        {{mesaj}}
+    </div>
+{% endfor %}
+{% else %}
+{% endif %}

@@ -1,0 +1,212 @@
+{% extends "anasayfa.html" %}
+{% load static%}
+
+
+{% block content %}
+      <style>
+::placeholder {
+ color: rgba(255, 0, 0, 0.493) !important;
+ }
+ @media screen and (max-width:1000px) {
+
+  .uyari-buton{
+    margin-left: 35%;
+  }
+  .altmenu .col-6{
+      width: 33.3%;
+     }
+     .altmenu iframe{
+      height: 150px;
+     }
+  .altmenu{
+      margin-left: 7%;
+     }
+     .giris-sag{
+   text-align: center;
+  }
+  }
+
+
+  @media screen and (max-width:900px) {
+    .uyari-buton{
+    margin-left: 30%;
+  }
+  .irtibat{
+    width: 100%;
+  }
+  .mesaj h4{
+    font-size: 20px;
+  }
+  .giris-sag{
+   text-align: center;
+  }
+  .altmenu{
+      margin-left: 5%;
+     } 
+     .input-group{ 
+      width: 250px;
+    }
+
+  }
+
+
+  @media screen and (max-width:700px) {
+  .irtibat{
+      width: 100%;
+      height: 800px;
+      }
+      .uyari-buton{
+    margin-left: 37%;
+    margin-bottom: 10px;
+  }
+    .mesaj{
+      width: 100%;
+      text-align: center;
+    }
+    .adres{
+    
+      width: 100%;
+      text-align: center;
+    }
+    .icons i{
+     margin-left: 170px;
+    }
+  .navbas{
+   height: 100px;
+  }
+  .navbas .active{      
+   font-size: 10px;
+  }
+   .arama{
+   width: 200px;
+   }
+   .giris-sag{
+   width: 75px;
+   font-size: 15px;
+   text-align: center;
+  }  
+  .altmenu{
+      margin:auto;
+     }
+     .input-group{
+      width: 250px;
+    }
+
+
+ }
+ @media screen and (max-width:500px) {
+  .icons i{
+     margin-left: 110px;
+    }
+    .altmenu .col-6{
+      width: 50%;
+     }
+    .input-group{
+      width: 250px;
+    }
+     
+ }
+      </style>
+
+ 
+  {% include "includes/_navbar.html" %}
+
+<!-- ulaşın -->
+
+    <div class="containers rounded-4 iletisim m-auto bg-info bg-opacity-25">
+     
+        <div class="row irtibat text-dark">
+
+            <div class="col-6 mesaj m-auto">
+                <h4 class="gelin">Öneri&Şikayet İçin Bize Yazınız</h4>
+                <hr class="text-warning opacity-50 ">
+
+              <div class="row mt-2 m-auto">
+                <form action="" method="POST">
+                  
+                  {% csrf_token %}
+
+                  {{ form }}
+                  <br>
+
+                  <div id = "success"></div>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-primary" id="sendMessageButton">Gönder</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            
+            <div class="col-6  adres m-auto">
+                <h4 class="gelin">İletişim Bilgileri</h4>
+                <hr class="text-warning border-2 opacity-50">
+
+                <div class="col-12 mt-2">
+                  <h5>  E-BURADA Genel Merkez Adresi:</h5>
+                  <address>Karanfil Mahallesi Gaziler Cad. Akçay Sokak No:27/10 KONAK/İZMİR/TÜRKİYE</address>
+                  <address>Tel: 0232 854 4585</address>
+                  <address>Email:info@e-burada.com</address>
+                </div>
+
+              <div class="col-12 ">
+                    <h4 class="gelin">Sosyal İletişimler</h4>
+                  <div class="row m-auto icons mx-2">
+
+                    <div class="col-1 ">
+                        <a href="" class="nav-link">
+                            <i class="fa-brands fa-twitter fs-4 "></i>
+                        </a>
+                    </div>
+
+                    <div class="col-1 ">
+                        <a href="" class="nav-link"> 
+                            <i class="fa-brands fa-facebook fs-4"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="col-1">
+                        <a href="" class="nav-link">
+                            <i class="fa-brands fa-instagram fs-4"></i>
+                    </a>
+                    
+                    </div>
+                </div>
+              </div>
+
+            </div>
+        </div>
+    </div>
+
+
+<!-- JAVASCRIPT ÇALIŞMA FRONTEND -->
+    
+<!-- <script src=" {% static 'js/jquery.js' %}"></script>
+    <script>
+    $("#Gönder").click(function() {
+      if($("#isim").val() == "") {
+                    $("#isim").attr("placeholder", "İsim boş bırakılamaz") ;
+                }
+            
+                if($("#email").val() == "") {
+                    $("#email").attr("placeholder", "Email boş bırakılamaz") ;
+                }
+    
+                if ($("#konu").val() == ""){
+                    $("#konu").attr("placeholder", "Konu boş bırakılamaz");
+                }
+    
+                if ($("#mesaj").val() == ""){
+                    $("#mesaj").attr("placeholder", "Mesaj boş bırakılamaz")
+                }
+    
+         })
+    
+    </script> -->
+
+
+
+
+{% include "includes/_footer.html" %}
+{% endblock content %}
+

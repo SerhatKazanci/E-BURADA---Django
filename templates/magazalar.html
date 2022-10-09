@@ -1,0 +1,314 @@
+{% extends "anasayfa.html" %}
+{%load static%}
+
+
+     {% block content %}
+     <style>
+       @media screen and (max-width:1100px) {
+    .altmenu .col-6{
+      width: 33.3%;
+     }
+     .altmenu iframe{
+      height: 150px;
+     }
+     .altmenu{
+      margin-left: 7%;
+     }
+        
+   }
+@media screen and (max-width:900px) {
+   
+     .altmenu{
+      margin-left: 5%;
+     }
+     .giris-sag{
+    text-align: center;
+   }  
+   .input-group{ 
+      width: 250px;
+    }
+    }
+@media screen and (max-width:700px) {
+    #magaza{
+      width: 95%;
+     }
+     .altmenu{
+      margin:auto;
+     }
+     .navbas{
+      height: 100px;
+     }
+     .navbas .active{
+      font-size: 10px;
+     }
+   .arama{
+    width: 200px;
+   }
+   .giris-sag{
+    width: 75px;
+    font-size: 15px;
+    text-align: center;
+   }  
+   .input-group{
+      width: 250px;
+    }
+     
+ }
+ @media screen and (max-width : 500px){
+  .altmenu .col-6{
+      width: 50%;
+     }
+    .input-group{
+      width: 250px;
+    }
+     
+ }
+
+     </style>
+
+{% include "includes/_navbar.html" %}
+
+
+<!-- MAĞAZALAR -->
+<div class="container mt-5 " id="magaza">
+    
+   
+    <input class="w-100 fs-6 mb-5 rounded-3 bg-danger bg-opacity-25" type="text" id="myInput" onkeyup="myFunction()" placeholder="Aramak İstediğiniz İli Yazınız.." title="Type in a name">
+
+    <ul id="myUL" class="p-0 m-0 rounded-3">
+
+
+      <li><a class="text-black fs-6 text-decoration-none p-3 bg-white mt-1 rounded-3 mt-5" href="#">İZMİR</a>
+        <div class="col bg-danger bg-opacity-25 magazalar rounded-4 text-center fs-5 mt-3">
+
+            <h6 class="mx-3"><b> İZMİR Forum Bornova AVM</b></h6>
+            <hr>
+            
+            <p>Fişekhane Cad. 35140 Ataköy No:1 İZMİR/Bornova
+            </p>
+            
+            <p>Tel : 0(232) 5599676</p>
+            <hr>
+            
+            <p>Pazartesi - Cuma 10:00-20:00</p>
+            
+        </div>
+
+        <div class="col bg-danger bg-opacity-25 magazalar rounded-4 text-center fs-5 mt-3">
+            <h6 class="mx-3"><b> İZMİR Mavibahçe AVM</b></h6>
+            <hr>
+            
+            <p>Kurtuluş Cad. 35440 Ataşehir No:135 İZMİR/Karşıyaka
+            </p>
+            
+            <p>Tel : 0(232) 8896576</p>
+            <hr>
+            
+            <p>Pazartesi - Cuma 10:00-22:00</p>
+            
+        </div>
+    
+    </li>
+
+
+
+      <li><a class="text-black fs-6 text-decoration-none p-3 bg-white mt-1 rounded-3" href="#">İSTANBUL</a>
+        <div class="col bg-danger bg-opacity-25 magazalar rounded-4 text-center fs-5 mt-3">
+
+            <h6 class="mx-3"><b> İSTANBUL İstinyePark AVM</b></h6>
+            <hr>
+            
+            <p>Karanfil Cad. 34230 Evka No:25 İSTANBUL/Şişli
+            </p>
+            
+            <p>Tel : 0(212) 2654610</p>
+            <hr>
+            
+            <p>Pazartesi - Cuma 10:00-23:00</p>
+            
+        </div>
+
+        <div class="col bg-danger bg-opacity-25 magazalar rounded-4 text-center fs-5 mt-3">
+            <h6 class="mx-3"><b> İSTANBUL Cevahir AVM</b></h6>
+            <hr>
+            
+            <p>Osman Cad. Mecidiyeköy No:12 İSTANBUL/Beşiktaş
+            </p>
+            
+            <p>Tel : 0(212) 4212678</p>
+            <hr>
+            
+            <p>Pazartesi - Cuma 10:00-20:00</p>
+            
+        </div>
+    
+    </li>
+
+
+    
+      <li><a class="text-black fs-6 text-decoration-none p-3 bg-white mt-1 rounded-3" href="#">ANKARA</a>
+        <div class="col bg-danger bg-opacity-25 magazalar rounded-4 text-center fs-5 mt-3">
+
+            <h6 class="mx-3"><b> ANKARA Panora AVM</b></h6>
+            <hr>
+            
+            <p>Gazi Cad. 3170 Çağdal No:2 ANKARA/Çankaya
+            </p>
+            
+            <p>Tel : 0(312) 1579376</p>
+            <hr>
+            
+            <p>Pazartesi - Cuma 10:00-21:00</p>
+            
+        </div>
+        <div class="col bg-danger bg-opacity-25 magazalar rounded-4 text-center fs-5 mt-3">
+            <h6 class="mx-3"><b> ANKARA Optimum AVM</b></h6>
+            <hr>
+            
+            <p>Önder Cad. 3641 Egekent No:14 ANKARA/Sincan
+            </p>
+            
+            <p>Tel : 0(312) 1238596</p>
+            <hr>
+            
+            <p>Pazartesi - Cuma 10:00-21:00</p>
+
+            
+            
+        </div>
+
+    </li>
+
+
+      <li><a class="text-black fs-6 text-decoration-none p-3 bg-white mt-1 rounded-3" href="#">BURSA</a>
+    
+        <div class="col bg-danger bg-opacity-25 magazalar rounded-4 text-center fs-5 mt-3">
+            <h6 class="mx-3"><b> BURSA Korupark AVM</b></h6>
+            <hr>
+            
+            <p>Emek Mah. Turgut Cad. No:2 16180 BURSA/Osmangazi
+            </p>
+            
+            <p>Tel : 0(224) 7584502</p>
+            <hr>
+            
+            <p>Pazartesi - Cuma 10:00-20:30</p>
+
+            
+            
+        </div>
+
+
+        <div class="col bg-danger bg-opacity-25 magazalar rounded-4 text-center fs-5 mt-3">
+            <h6 class="mx-3"><b> BURSA İnegöl AVM</b></h6>
+            <hr>
+            
+            <p>Osmaniye Mah. Altay Cad. No:216400 BURSA/İnegöl
+              
+            </p>
+            
+            <p>Tel : 0(224) 0204596</p>   
+            <hr>
+            
+            <p>Pazartesi - Cuma 11:00-21:30</p>
+
+            
+            
+        </div>
+    
+    </li>
+    
+      <li><a class="text-black fs-6 text-decoration-none p-3 bg-white mt-1 rounded-3"  href="#">ESKİŞEHİR</a>
+    
+    
+        <div class="col bg-danger bg-opacity-25 magazalar rounded-4 text-center fs-5 mt-3">
+            <h6 class="mx-3"><b> ESKİŞEHİR Espark AVM</b></h6>
+            <hr>
+            
+            <p>Eskibağlar, Yılmaz Blv No:21, 26170 ESKİŞEHİR/Tepebaşı
+            </p>
+            
+            <p>Tel : 0(222) 7020045</p>
+            <hr>
+            
+            <p>Pazartesi - Cuma 10.30:00-22:30</p>
+
+            
+            
+        </div>
+        <div class="col bg-danger bg-opacity-25 magazalar rounded-4 text-center fs-5 mt-3">
+            <h6 class="mx-3"><b> ESKİŞEHİR Vega AVM</b></h6>
+            <hr>
+            
+            <p> Şirintepe, Gözüpek Sk. No:15, ESKİŞEHİR/Bostanlı
+            </p>
+            
+            <p>Tel : 0(222) 1023658</p>
+            <hr>
+            
+            <p>Pazartesi - Cuma 10:00-20:00</p>
+        </div>
+    
+    </li>
+
+    <li><a class="text-black fs-6 text-decoration-none p-3 bg-white mt-1 rounded-3"  href="#">GAZİANTEP</a>
+    
+    
+      <div class="col bg-danger bg-opacity-25 magazalar rounded-4 text-center fs-5 mt-3">
+          <h6 class="mx-3"><b> GAZİANTEP Primemall AVM</b></h6>
+          <hr>
+          
+          <p> Üniversite Blv No:2, 27154 GAZİANTEP/Şahinbey
+          </p>
+          
+          <p>Tel : 0(342) 2018596</p>
+          <hr>
+          
+          <p>Pazartesi - Cuma 10.00:00-22:30</p>
+
+          
+          
+      </div>
+      <div class="col bg-danger bg-opacity-25 magazalar rounded-4 text-center fs-5 mt-3">
+          <h6 class="mx-3"><b> GAZİANTEP Forum AVM</b></h6>
+          <hr>
+          
+          <p> Şirintepe, Gözüpek Sk. No:15, GAZİANTEP/Şehitkamil
+          </p>
+          
+          <p>Tel : 0(342) 2548621</p>
+          <hr>
+          
+          <p>Pazartesi - Cuma 10:00-21:00</p>
+      </div>
+  
+    </li>
+     
+    </ul>
+    
+    <script>
+    function myFunction() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myUL");
+        li = ul.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "block";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    }
+    </script>
+    
+</div>
+
+
+{% include "includes/_footer.html" %} 
+{% endblock content%}
+
+

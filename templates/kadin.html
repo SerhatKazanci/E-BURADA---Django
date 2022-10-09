@@ -1,0 +1,254 @@
+{% extends "anasayfa.html" %}
+{% load static%}
+      
+      {% block content %}     
+<style>
+      
+  .card .fs-4{
+        animation: 3s infinite alternate fiyat ;
+  }
+  @keyframes fiyat {
+        0%{
+      color:blue ;
+      
+        
+   }
+        50%{
+          color:rgba(0, 0, 255, 0.406) ;
+
+    }
+
+      100%{
+      color:blue ;
+
+    }
+   
+   }
+   @media screen and (max-width:1100px) {
+    .altmenu .col-6{
+      width: 33.3%;
+     }
+     .altmenu iframe{
+      height: 150px;
+     }
+     .altmenu{
+      margin-left: 7%;
+     }
+        
+   }
+          /* Responsive */
+   
+          @media screen and (max-width:900px) {
+    .list a{  
+        font-size: 12px;
+     }
+     .yanresim{
+      margin-top: 48px;
+     }
+     .containers{
+      width: 90%;
+     }
+     .card-title{
+      font-size: 18px;
+     }
+     .altmenu{
+      margin-left: 5%;
+     } 
+     .giris-sag{
+    text-align: center;
+   }  
+    .input-group{ 
+      width: 250px;
+    }
+ }
+ 
+
+ @media screen and (max-width:700px) {
+    .containers{
+      width: 95%;
+     }
+     .lis{
+      width: 90%;
+      margin: auto;
+     }
+     .buyuk-kart{
+      margin: auto;
+      width: 90%;
+     }
+     .erkek .card{
+      width: 9em!important;
+      margin-bottom: 100px;
+   
+     }
+     
+     .kadin .card-body{
+      height: 170px!important;
+     }
+    .kadin .card-title{
+      font-size: 18px;
+     }
+     .card-img-top{
+      height: 220px!important;
+     }
+   
+     .altmenu{
+      margin-left: auto;
+     }
+     .navbas{
+      height: 100px;
+     }
+     .navbas .active{
+      font-size: 10px;
+     }
+   .arama{
+    width: 200px;
+   }
+   .giris-sag{
+    width: 75px;
+    font-size: 15px;
+    text-align: center;
+   }  
+   .input-group{
+      width: 250px;
+    }
+     
+ }
+ @media screen and (max-width : 500px){
+  .altmenu .col-6{
+      width: 50%;
+     }
+    .input-group{
+      width: 250px;
+    }
+     
+ }
+</style>
+
+
+
+
+    
+      {% include "includes/_navbar.html" %}
+<!-- LİSTELER VE CARD -->
+
+<!-- LİSTE -->
+
+<div class="containers liste m-auto ">
+  <div class="row mt-2">
+
+    <div class="col-3 lh-lg fs-3 fst-italic lis">
+      <h3 class="mb-2 text-center text-black fs-1">KATEGORİ</h3>
+      
+      <ul class="list-group list">
+        <li class="list-group-item d-flex justify-content-between align-items-center  bg-danger bg-opacity-50">
+         <a href="{% url 'kadin' %}" class="text-decoration-none text-black">KADIN</a> 
+          <button class="badge text-black ">+</button>
+        </li>
+
+        <li class="list-group-item d-flex justify-content-between align-items-center bg-danger bg-opacity-50">
+         <a href="{% url 'erkek' %}" class="text-decoration-none text-black"> ERKEK</a>
+          <button class="badge text-black ">+</button>
+        </li>
+
+        <li class="list-group-item d-flex justify-content-between align-items-center bg-danger bg-opacity-50">
+         <a href="{% url 'cocuk' %}" class="text-decoration-none text-black">  ÇOÇUK</a>
+          <button class="badge text-black ">+</button>
+        </li>
+ 
+        <li class="list-group-item d-flex justify-content-between align-items-center bg-danger bg-opacity-50">
+         <a href="#" class="text-decoration-none text-black">  BAHAR GRUBU</a>
+          <button class="badge text-black ">+</button>
+        </li>
+        
+        <li class="list-group-item d-flex justify-content-between align-items-center bg-danger bg-opacity-50">
+          <a href="#" class="text-decoration-none text-black"> YAZ GRUBU</a>
+          <button class="badge text-black ">+</button>
+        </li>
+
+        <li class="list-group-item d-flex justify-content-between align-items-center bg-danger bg-opacity-50">
+        <a href="#" class="text-decoration-none text-black"> KIŞ GRUBU</a>
+          <button class="badge text-black ">+</button>
+        </li>
+
+        <li class="list-group-item d-flex justify-content-between align-items-center bg-danger bg-opacity-50">
+          <a href="#" class="text-decoration-none text-black"> SONBAHAR GRUBU</a>
+          <button class="badge text-black ">+</button>
+        </li>
+
+
+      </ul>
+      <div class="col yanresim">
+        <div id="carouselExampleControls" class="carousel slide"  data-bs-ride="carousel">
+          <div class="carousel-inner">
+
+            {% for gez in yanresimk %}
+            <div class="carousel-item active">
+              <img src="{{gez.yanfoto.url}}" class="d-block " alt="...">
+            </div>
+           {% endfor%}
+           
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        </div>
+     
+
+    </div>
+
+
+  <!-- CARDS BÜYÜK-->
+
+    <div class="col-9 mt-5 buyuk-kart" data-aos="fade-down">
+
+      {% for gez in buyukkartk %}
+      <div class="card mb-3">
+        <a href="#"><img src="{{gez.buyukfoto.url}}" class="card-img-top " alt="..."></a>
+        <div class="card-body bg-danger bg-opacity-25">
+          <a href="" class="text-decoration-none text-black"><h5 class="card-title"> {{gez.buyukbaslik}}</h5></a>
+        </div>
+      </div>  
+      {% endfor %}
+
+    
+  
+  </div> 
+  </div>
+</div>
+
+
+
+<!-- CARS KÜÇÜK -->
+<div class="containers liste m-auto ">
+  <div class="row mt-5 kadin">
+
+    {% for gez in kartk %}
+
+    <div class="col-4 mb-5">
+        <div class="card " data-aos="fade-up">
+          <a href="#"><img src="{{gez.foto.url}}" height="550" class="card-img-top" alt="..."></a>
+          <div class="card-body bg-danger bg-opacity-25">
+            <a href="" class="text-decoration-none text-black " ><h5 class="card-title"> {{gez.baslik}}</h5></a>
+            <a href="" class="text-decoration-none text-primary  opacity-75"><h5 class="card-title fs-4 fiyat">{{gez.metin}}</h5></a>
+            <button type="button" class="btn btn-outline-danger">Sepete Ekle</button>
+          </div>
+        </div> 
+    </div>
+    {% endfor %}
+
+
+ 
+  </div>
+</div>
+{% include "includes/_footer.html" %}
+
+{% endblock content %} 
+
+
+
